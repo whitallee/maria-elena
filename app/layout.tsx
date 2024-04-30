@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Dosis } from "next/font/google";
 import "./globals.css";
+import TopNav from "@/components/TopNav";
 
-const inter = Inter({ subsets: ["latin"] });
+import { ClerkProvider } from "@clerk/nextjs";
+
+const dosis = Dosis({ subsets: ['latin'], weight: ['400'] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,8 +18,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body className={dosis.className + " bg-[var(--light-tan)] text-[var(--dark-purple)]"}>
+          <TopNav/>
+          {children}
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
