@@ -20,8 +20,7 @@ const dosis = Dosis({ subsets: ['latin'], weight: ['400'] });
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-between pt-16 z-20">
-      <h1 className={montez.className + " text-9xl flex flex-col items-center justify-center pb-4"}>Maria Elena<br/><span className={dosis.className + " text-2xl"}>by Milan Creations</span></h1>
+    <main className="flex flex-col items-center justify-between z-20">
       {/* Autoplay() function moved to carousel.tsx */}
       <Carousel className="w-5/6" opts={{loop: true}}>
         <div className="overflow-hidden rounded-[32px]">  
@@ -61,7 +60,7 @@ export default function Home() {
           <div className="flex flex-col justify-center">
             <span>Email: <a className="text-[var(--light-purple)]" href='mailto:mariaelenamilan00@gmail.com'>mariaelenamilan00@gmail.com</a></span>
             <span>Instagram: <a className="text-[var(--light-purple)]" href='https://www.instagram.com/_elenamilan_/?hl=en'>@_elenamilan_</a></span>
-            <a className="text-[var(--light-purple)]" href='#'>Frequently Asked Questions</a>
+            <a className="text-[var(--light-purple)]" href='/faq'>Frequently Asked Questions</a>
           </div>
         </div>
       </div>
