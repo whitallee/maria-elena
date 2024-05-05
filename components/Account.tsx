@@ -12,9 +12,10 @@ function LoggedInAvatar({children, user}: {children: React.ReactNode, user: any}
     return(
         <Popover>
             <PopoverTrigger>{children}</PopoverTrigger>
-            <PopoverContent className="flex-col items-center justify-center w-auto text-[var(--light-tan)] bg-[var(--light-purple)]">
-                <span>Logged in as {user.emailAddresses[0].emailAddress}</span>
-                <div className="rounded-full bg-[var(--dark-purple)] text-[var(--light-tan)] text-center w-[8ch]">
+            <PopoverContent className="flex-col items-center justify-center w-auto text-[var(--dark-purple)] bg-[var(--light-purple)]">
+                <span className="pb-4">Logged in as {user.emailAddresses[0].emailAddress}</span>
+                <div className="w-full bg-transparent h-2"></div>
+                <div className="rounded-full bg-[var(--dark-purple)] text-[var(--light-tan)] w-auto flex justify-center items-center">
                     <SignOutButton/>
                 </div>
             </PopoverContent>
