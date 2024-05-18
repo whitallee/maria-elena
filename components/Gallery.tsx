@@ -2,7 +2,7 @@ import Image from "next/image";
 
 function MiniGallery({children}: {children: React.ReactNode}){
     return(
-        <div className="w-full border-2 border-[var(--light-purple)] shadow-lg shadow-[var(--light-purple)] overflow-hidden rounded-[32px] p-4 flex gap-4 justify-between">
+        <div className="w-full border-2 border-[var(--light-purple)] shadow-lg shadow-[var(--light-purple)] overflow-hidden rounded-[32px] p-4 flex gap-4 justify-between flex-col lg:flex-row">
             {children}
         </div>
     )

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { LogIn } from "lucide-react";
+import { LogIn, User } from "lucide-react";
 import { currentUser } from "@clerk/nextjs/server";
 import { SignOutButton } from "@clerk/nextjs";
 import {
@@ -12,12 +12,12 @@ function LoggedInAvatar({children, user}: {children: React.ReactNode, user: any}
     return(
         <Popover>
             <PopoverTrigger>{children}</PopoverTrigger>
-            <PopoverContent className="flex-col items-center justify-center w-auto text-[var(--dark-purple)] bg-[var(--light-purple)]">
+            <PopoverContent className="flex-col items-center justify-center w-auto text-[var(--dark-purple)] bg-[var(--light-tan)] border-2 border-[var(--light-purple)]">
                 <span className="pb-4">Logged in as {user.emailAddresses[0].emailAddress}</span>
                 <div className="w-full bg-transparent h-2"></div>
-                <div className="rounded-full bg-[var(--dark-purple)] text-[var(--light-tan)] w-auto flex justify-center items-center">
-                    <SignOutButton/>
-                </div>
+                <SignOutButton>
+                    <div className="rounded-full bg-[var(--dark-purple)] text-[var(--light-tan)] w-auto flex justify-center items-center cursor-pointer">Sign out</div>
+                </SignOutButton>
             </PopoverContent>
         </Popover>
     )
@@ -41,7 +41,7 @@ export default async function Account(){
     }
     else {
         return(
-            <Link href="/sign-in"><LogIn className="h-8 w-8"/></Link>
+            <Link href="/sign-in"><User className="h-8 w-8"/></Link>
         );
     }
 };
